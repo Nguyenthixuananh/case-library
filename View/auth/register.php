@@ -39,9 +39,10 @@
                     <label style="font-size: 20px" for="">Role:</label>
                     <select id="cars" name="role">
 <!--                        <option>Admin</option>-->
-                        <option>Người dùng</option>
+                        <option>User</option>
                     </select>
                 </div>
+
 
                 <div class="form-group">
                     <label style="font-size: 20px" for="">Password:</label>

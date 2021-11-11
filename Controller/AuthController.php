@@ -24,12 +24,16 @@ class AuthController
     {
         $email = $request["email"];
         $password = $request["password"];
-        if ($this->userModel->checkLogin($email, $password)) {
+        $role = $request["role"];
+        if ($this->userModel->checkLogin($email, $password, $role)) {
             $user = $this->userModel->getByEmail($email);
-//            var_dump($user);
-//            die();
             $_SESSION["username"] = $user["name"];
-            header("location:index.php");
+            if($role == "Admin"){
+                header("location:index.php?page=book-list");
+            } else {
+                header("location:index.php?page=home-list");
+            }
+//            header("location:index.php");
         } else {
 //            var_dump("Tài khoản không đúng");
             echo "Tài khoản không đúng";
@@ -113,6 +117,11 @@ class AuthController
         ];
         $this->userModel->edit($data);
         header("location:index.php?page=user-list");
+    }
+
+    public function showProfile()
+    {
+        include_once "View/home/profile.php";
     }
 
 }

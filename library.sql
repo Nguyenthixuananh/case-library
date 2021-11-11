@@ -58,5 +58,12 @@ VALUES (1, 1, 1, '2021-11-08', '2021-11-12', 'Đang cho mượn'),
     (2, 2, 2, '2021-11-01', '2021-11-05', 'Đã trả'),
     (3, 3, 3, '2021-11-04', '2021-11-08', 'Quá hạn');
 
+select *
+from borrowers;
+
+select users.name, books.name, borrowers.dateStart, borrowers.datFinish, borrowers.status
+from `borrowers`
+         inner join users on users.id = borrowers.user_id
+         inner join books on books.id = borrowers.book_id;
 
 

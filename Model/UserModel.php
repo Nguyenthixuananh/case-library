@@ -26,12 +26,13 @@ class UserModel
         return $stmt->fetch();
     }
 
-    public function checkLogin($email, $password)
+    public function checkLogin($email, $password, $role)
     {
-        $sql = "SELECT * FROM $this->table WHERE email = :email and password = :password";
+        $sql = "SELECT * FROM $this->table WHERE email = :email and password = :password and role = :role";
         $stmt = $this->dbConnect->prepare($sql);
         $stmt->bindParam(":email",$email);
         $stmt->bindParam(":password",$password);
+        $stmt->bindParam(":role",$role);
         $stmt->execute();
         return $stmt->rowCount() > 0;
     }

@@ -62,5 +62,14 @@ INNER JOIN `categories` ON `books`.category_id = `categories`.id";
             echo $exception->getMessage();
         }
     }
+//
+//    public function getAllforUser()
+//    {
+//        $sql = "SELECT `books`.id, `books`.name as `book_name`, `categories`.name as `category_name`, `books`.description as `description`, `books`.author as `author`, `books`.publishingCompany as `publishingCompany`, `books`.quantity as `quantity` FROM `books`
+//INNER JOIN `categories` ON `books`.category_id = `categories`.id";
+//
+//        $stmt = $this->dbConnect->query($sql);
+//        return $stmt->fetchAll();
+//    }
 
 }

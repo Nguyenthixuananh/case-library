@@ -1,6 +1,7 @@
 <a type="button" href="index.php?page=book-create">ADD NEW BOOK</a>
 
 <a type="button" class="btn btn-outline-warning mt-3 mb-3 ps-5 pe-5 p-10" href="index.php?page=category-list">Category</a>
+<a type="button" class="btn btn-outline-warning mt-3 mb-3 ps-5 pe-5 p-10" href="index.php?page=user-list">User</a>
 
 <!--<form action=""></form>-->
 

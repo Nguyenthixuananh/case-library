@@ -2,16 +2,21 @@
 
 include_once "Model/BookModel.php";
 include_once "Model/CategoryModel.php";
+include_once "Model/BorrowModel.php";
+
 
 class BookController
 {
     private BookModel $bookModel;
     private CategoryModel $categoryBookModel;
+    private BorrowModel $borrowModel;
 
     public function __construct()
     {
         $this->bookModel= new BookModel();
         $this->categoryBookModel = new CategoryModel();
+        $this->borrowModel = new BorrowModel();
+
     }
 
     public function index()
@@ -21,6 +26,19 @@ class BookController
 //        die();
         include_once "View/book/list.php";
     }
+
+    public function homeIndex()
+    {
+        $books = $this->bookModel->getAll();
+        include_once "View/home/list.php";
+    }
+
+//    public function showDetail($id)
+//    {
+//        $book = $this->bookModel->getById($id);
+//        include_once "View/home/detail.php";
+//    }
+
     public function showFormCreate()
     {
         // lay het types
@@ -47,16 +65,21 @@ class BookController
     public function deleteBook($id)
     {
         if ($this->bookModel->getById($id) !== null) {
-            $this->bookModel->delete($id);
-            header("location:index.php");
+            if($this->borrowModel->checkBookById($id)){
+                echo "<script>alert('Khong the xoa sach do dang co nguoi muon!');window.location.href='index.php?page=book-list';</script>";
+            }else{
+                $this->bookModel->delete($id);
+                header("location:index.php");
+            }
+
         }
     }
 
-    public function showDetail($id)
-    {
-        $book = $this->bookModel->getById($id);
-        include_once "View/book/detail.php";
-    }
+//    public function showDetail($id)
+//    {
+//        $book = $this->bookModel->getById($id);
+//        include_once "View/book/detail.php";
+//    };
 
     public function showFormUpdate()
     {

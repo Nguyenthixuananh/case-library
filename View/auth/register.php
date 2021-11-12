@@ -13,7 +13,6 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-
 <div class="container" style="width: 50%; ">
     <div class="row">
         <div class="col-md-12">

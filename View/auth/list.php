@@ -1,6 +1,9 @@
 <div class="container-fluid">
+    <div>
     <a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>
-    <table class="table align-middle">
+    </div>
+    <br>
+    <table style="text-align: center" class="table align-middle">
         <thead class="table-info">
         <tr>
             <th>STT</th>
@@ -8,9 +11,10 @@
             <th>Phone</th>
             <th>Address</th>
             <th>Email</th>
-            <th>Password</th>
+<!--            <th>Password</th>-->
             <th>Image</th>
             <th>Role</th>
+            <th colspan="2">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -22,12 +26,12 @@
                     <td><?php echo $user["phone"] ?></td>
                     <td><?php echo $user["address"] ?></td>
                     <td><?php echo $user["email"] ?></td>
-                    <td><?php echo $user["password"] ?></td>
+<!--                    <td>--><?php //echo $user["password"] ?><!--</td>-->
                     <td><img width="150px" height="150px" src="<?php echo $user["image"] ?>"></td>
-                    <td><?php echo $user["role"] ?></td>
+                    <td ><?php echo $user["role"] ?></td>
                     <td><a class="btn btn-danger" onclick="return confirm('Are you sure??')"
-                           href="index.php?page=user-delete&id=<?php echo $user["id"] ?>">Delete</a></td>
-                    <td><a class="btn btn-warning" href="index.php?page=user-update&id=<?php echo $user["id"] ?>">Edit</a></td>
+                           href="index.php?page=user-delete&id=<?php echo $user["id"] ?>">Delete</a>
+                    <a class="btn btn-warning" href="index.php?page=user-update&id=<?php echo $user["id"] ?>">Edit</a></td>
 
                 </tr>
             <?php endforeach; ?>

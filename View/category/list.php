@@ -1,8 +1,20 @@
+<?php
+include_once "View/esset/topAdmin.php";
+?>
+<style>
+    body {
+        background-image: url("View/image/background.jpg");
+    }
+
+    table {
+        background-color: white;
+    }
+</style>
 <div class="container-fluid">
     <div>
-        <a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>
+<!--        <a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>-->
         <a type="button" class="btn btn-dark" href="index.php?page=category-create">ADD NEW CATEGORY</a>
-        <a type="button" class="btn btn-dark" href="index.php?page=book-list">Book List</a>
+<!--        <a type="button" class="btn btn-dark" href="index.php?page=book-list">Book List</a>-->
     </div>
     <br>
     <table class="table align-middle">
@@ -32,3 +44,9 @@
 
 
 </div>
+
+<!--<section>-->
+<!--    --><?php
+//    include_once "View/esset/footer.php";
+//    ?>
+<!--</section>-->

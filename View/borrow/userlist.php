@@ -1,7 +1,17 @@
+<?php include_once "View/esset/top.php"?>
+<style>
+    body {
+        background-image: url("View/image/background.jpg");
+    }
+
+    table {
+        background-color: white;
+    }
+</style>
 <div class="container-fluid">
-    <div>
-        <a class="btn btn-dark" href="index.php?page=home-list">Back</a>
-    </div>
+<!--    <div>-->
+<!--        <a class="btn btn-dark" href="index.php?page=home-list">Back</a>-->
+<!--    </div>-->
     <br>
     <div>
         <table class="table align-middle">

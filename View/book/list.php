@@ -1,28 +1,35 @@
+<?php
+include_once "View/esset/topAdmin.php";
+?>
 <style>
     body {
-        background-image: url("");
+        background-image: url("View/image/background.jpg");
+    }
+
+    table {
+        background-color: white;
     }
 </style>
 
 <div class="container-fluid">
     <div>
     <a class="btn btn-dark" type="button" href="index.php?page=book-create">ADD NEW BOOK</a>
-    <a class="btn btn-dark" type="button" href="index.php?page=category-list">Category</a>
-    <a class="btn btn-dark" type="button" href="index.php?page=user-list">User</a>
-    <a type="button" class="btn btn-dark" href="index.php?page=borrow-list">Borrowed</a>
+<!--    <a class="btn btn-dark" type="button" href="index.php?page=category-list">Category</a>-->
+<!--    <a class="btn btn-dark" type="button" href="index.php?page=user-list">User</a>-->
+<!--    <a type="button" class="btn btn-dark" href="index.php?page=borrow-list">Borrowed</a>-->
 
 <!--    <a type="button" class="btn btn-outline-warning mt-3 mb-3 ps-5 pe-5 p-10"-->
 <!--       href="index.php?page=category-list">Category</a>-->
 <!--    <a type="button" class="btn btn-outline-warning mt-3 mb-3 ps-5 pe-5 p-10" href="index.php?page=user-list">User</a>-->
-    <a type="button" class="btn btn-dark" href="index.php?page=logout">Logout</a>
+<!--    <a type="button" class="btn btn-dark" href="index.php?page=logout">Logout</a>-->
     </div>
     <br>
 <div>
-    <form action="" method="get">
-        <input type="text" name="search" placeholder="Nhập từ khóa">
-        <input type="submit" value="Tìm">
-
-    </form>
+<!--    <form action="" method="get">-->
+<!--        <input type="text" name="search" placeholder="Nhập từ khóa">-->
+<!--        <input type="submit" value="Tìm">-->
+<!---->
+<!--    </form>-->
 
     <div>
         <table class="table table-striped table table-hover">

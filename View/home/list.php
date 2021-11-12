@@ -1,4 +1,5 @@
 <?php
+include_once "View/esset/top.php";
 $page = $_GET["page"] ?? null;
 
 $username = $_SESSION["username"] ?? null;
@@ -18,7 +19,7 @@ $username = $_SESSION["username"] ?? null;
     <title>Document</title>
     <style>
         body {
-            background-image: url("View/image/back.jpg");
+            background-image: url("View/image/background.jpg");
         }
 
         table {
@@ -28,11 +29,11 @@ $username = $_SESSION["username"] ?? null;
 </head>
 <body>
 <div class="container-fluid">
-    <p><a type="button" class="btn btn-dark" href="index.php?page=logout">Logout</a> <a type="button" class="btn btn-dark" href="index.php?page=borrow-user-list">Borrowed</a></p>
-    <form action="" method="get">
-        <input type="text" name="search" placeholder="Nhập từ khóa">
-        <input type="submit" value="Tìm">
-    </form>
+<!--    <p><a type="button" class="btn btn-dark" href="index.php?page=logout">Logout</a> <a type="button" class="btn btn-dark" href="index.php?page=borrow-user-list">Borrowed</a></p>-->
+<!--    <form action="" method="get">-->
+<!--        <input type="text" name="search" placeholder="Nhập từ khóa">-->
+<!--        <input type="submit" value="Tìm">-->
+<!--    </form>-->
     <table class="table table-striped table table-hover">
         <thead class="table-dark">
         <tr>

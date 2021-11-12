@@ -1,7 +1,19 @@
+<?php
+include_once "View/esset/topAdmin.php";
+?>
+<style>
+    body {
+        background-image: url("View/image/background.jpg");
+    }
+
+    table {
+        background-color: white;
+    }
+</style>
 <div class="container-fluid">
-    <div>
-    <a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>
-    </div>
+<!--    <div>-->
+<!--    <a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>-->
+<!--    </div>-->
     <br>
     <table style="text-align: center" class="table align-middle">
         <thead class="table-info">

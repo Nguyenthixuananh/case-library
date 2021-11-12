@@ -1,14 +1,26 @@
+<?php
+include_once "View/esset/top.php";
+?>
 <style>
     table {
         margin-left: auto;
         margin-right: auto;
     }
+
+     body {
+         background-image: url("View/image/background.jpg");
+     }
+
+    table {
+        background-color: white;
+    }
+
 </style>
-<div class="container-fluid">
-    <a class="btn btn-dark" href="index.php?page=home-list">
-        Back
-    </a>
-</div>
+<!--<div class="container-fluid">-->
+<!--    <a class="btn btn-dark" href="index.php?page=home-list">-->
+<!--        Back-->
+<!--    </a>-->
+<!--</div>-->
 <br>
 <div>
     <table class="table table-striped table table-hover" style="width: 80%">

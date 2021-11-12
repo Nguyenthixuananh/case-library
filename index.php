@@ -169,6 +169,9 @@ $username = $_SESSION["username"] ?? null;
         case "borrow-delete":
             $borrowController->deleteBorrow($_REQUEST["id"]);
             break;
+        case "auth-back":
+            $authController->back();
+            break;
         default:
             if(isset($_REQUEST['key'])){
                 $key = $_REQUEST['key'];

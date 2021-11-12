@@ -38,7 +38,8 @@ class AuthController
 //            header("location:index.php");
         } else {
 //            var_dump("Tài khoản không đúng");
-            echo "Tài khoản không đúng";
+            header("location:index.php?page=auth-back");
+//            echo "Tài khoản không đúng";
         }
     }
 
@@ -150,4 +151,8 @@ class AuthController
         include_once "View/home/profile.php";
     }
 
+    public function back()
+    {
+        include_once "View/auth/back.php";
+    }
 }

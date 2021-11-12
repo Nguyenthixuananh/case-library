@@ -90,6 +90,10 @@ include_once "View/esset/top.php";
                 <td>Date Finish<input type="date" name="datFinish" required></td>
             </tr>
             <tr>
+<!--               --><?php //
+//               if ()
+//
+//               ?>
                 <td colspan="2"><input style="background-color: #FECA2C" type="submit" value="Register"></td>
             </tr>
             </tbody>

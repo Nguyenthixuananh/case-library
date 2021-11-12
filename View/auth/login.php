@@ -140,9 +140,9 @@
                 <div class="d-flex justify-content-center links">
                     Don't have an account? <a href="index.php?page=user-create" class="ml-2">Sign Up</a>
                 </div>
-                <div class="d-flex justify-content-center links">
-                    <a href="#">Forgot your password?</a>
-                </div>
+<!--                <div class="d-flex justify-content-center links">-->
+<!--                    <a href="#">Forgot your password?</a>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

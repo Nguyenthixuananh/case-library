@@ -8,43 +8,56 @@
     <title>Document</title>
 </head>
 <body>
-<form action="" method="post" enctype="multipart/form-data">
-<table>
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Category</th>
-        <th>Description</th>
-        <th>Author</th>
-        <th>Publishing Company</th>
-        <th>Quantity</th>
-        <th>Image</th>
-    </tr>
-    </thead>
-    <tbody>
-    <td><input type="text"name="name"></td>
-    <td><select id="cars" name="category_id">
-            <?php foreach ($categories as $category) : ?>
-                <option value="<?php echo $category["id"]?>"><?php echo $category["name"]?></option>
-            <?php endforeach;?>
-        </select></td>
-    <td><textarea type="text"name="description"></textarea></td>
-    <td><input type="text"name="author"></td>
-    <td><input type="text"name="publishingCompany"></td>
-    <td><input type="text"name="quantity"></td>
-    <td><input type="file" name="file"></td>
+<div class="container-fluid">
+    <form action="" method="post" enctype="multipart/form-data">
+        <table class="table table-striped table table-hover">
+            <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Name</td>
+                <td><input style="width: 100%" type="text"name="name"></td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td><select style="width: 100%" id="cars" name="category_id">
+                        <?php foreach ($categories as $category) : ?>
+                            <option value="<?php echo $category["id"]?>"><?php echo $category["name"]?></option>
+                        <?php endforeach;?>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><textarea style="width: 100%" type="text"name="description"></textarea></td>
+            </tr>
+            <tr>
+                <td>Author</td>
+                <td><input style="width: 100%" type="text"name="author"></td>
+            </tr>
+            <tr>
+                <td>Publishing Company</td>
+                <td><input style="width: 100%" type="text"name="publishingCompany"></td>
+            </tr>
+            <tr>
+                <td>Image</td>
+                <td><input style="width: 100%" type="file" name="file"></td>
+            </tr>
 
-    <td>
-        <a href="index.php?page=book-list"><button>Back</button></a>
-    </td>
-    <td>
-        <button type="reset">Reset</button>
-    </td>
-    <td>
-        <button type="submit">Add book</button>
-    </td>
-    </tbody>
-</table>
-</form>
+            <td>
+                <a href="index.php?page=book-list"><button>Back</button></a>
+            </td>
+            <td>
+                <button style="width: 200px;background-color: #FECA2C" type="reset">Reset</button>
+                <button style="width: 200px;background-color: #FECA2C" type="submit">Add book</button>
+            </td>
+            </tbody>
+        </table>
+    </form>
+</div>
+
 </body>
 </html>

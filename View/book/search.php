@@ -1,29 +1,47 @@
 <?php
+include_once "View/esset/topAdmin.php";
 ?>
-<div id="main" class="container">
+<style>
+    body {
+        background-image: url("View/image/background.jpg");
+    }
+
+    table {
+        background-color: white;
+    }
+</style>
+<div id="main" class="container-fluid">
     <div class="product">
         <div class="row mt-3">
             <?php foreach ($search as $key=>$value): ?>
-
-                <tr>
-                    <td><img width="150px" height="150px"  src="<?php echo $value["image"] ?>"></td>
-                    <td><?php echo $key+1?></td>
-                    <td><?php echo $value["book_name"] ?></td>
-                    <td><?php echo $value["category_name"] ?></td>
-                    <td><?php echo $value["description"] ?></td>
-                    <td><?php echo $value["author"] ?></td>
-                    <td><?php echo $value["publishingCompany"] ?></td>
-                    <td><?php echo $value["quantity"] ?></td>
-
-                    <!--                <td><a class="btn btn-success" href="index.php?page=note-detail&id=--><?php //echo $note["id"] ?><!--">Detail</a></td>-->
-<!--                    <td><a onclick="return confirm('Are you sure??')"-->
-<!--                           href="index.php?page=book-delete&id=--><?php //echo $book["id"] ?><!--">Delete</a></td>-->
-<!--                    <td><a href="index.php?page=book-update&id=--><?php //echo $book["id"] ?><!--">Edit</a></td>-->
-
-                </tr>
-
-
-
+         <table class="table table-striped table table-hover">
+             <tr>
+                 <th>Image</th>
+                 <th>Title</th>
+                 <th>Description</th>
+             </tr>
+             <tr>
+                 <td rowspan="5"><img style="width: 150px" src="<?php echo $value["image"] ?>" alt=""></td>
+                 <td>Book</td>
+                 <td><?php echo $value["book_name"] ?></td>
+             </tr>
+             <tr>
+                 <td>Category</td>
+                 <td><?php echo $value["category_name"] ?></td>
+             </tr>
+             <tr>
+                 <td>Description</td>
+                 <td><?php echo $value["description"] ?></td>
+             </tr>
+             <tr>
+                 <td>Author</td>
+                 <td><?php echo $value["author"] ?></td>
+             </tr>
+             <tr>
+                 <td>Publishing Company</td>
+                 <td><?php echo $value["publishingCompany"] ?></td>
+             </tr>
+         </table>
             <?php endforeach; ?>
         </div>
     </div>

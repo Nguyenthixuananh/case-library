@@ -122,11 +122,18 @@ class BookController
 
     public function search($key)
     {
-        if($_SERVER['REQUEST_METHOD']=="GET") {
-            $search = $this->bookModel->search($key);
-            include "View/book/search.php";
+//        if($_SERVER['REQUEST_METHOD']=="GET") {
+            header("location:index.php?page=search&key=$key");
 
-        }
+//        }
+    }
+
+    public function showSearchResult()
+    {
+        $key = $_REQUEST["key"];
+        $search = $this->bookModel->search($key);
+        include "View/book/search.php";
+
     }
 
 }

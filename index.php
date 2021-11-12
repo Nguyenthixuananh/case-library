@@ -76,10 +76,7 @@ $username = $_SESSION["username"] ?? null;
             break;
 
         case "search":
-            $key = $_REQUEST['key'];
-            $bookController->search($key);
-
-
+            $bookController->showSearchResult();
             break;
         case "category-create":
             if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -172,9 +169,11 @@ $username = $_SESSION["username"] ?? null;
         case "borrow-delete":
             $borrowController->deleteBorrow($_REQUEST["id"]);
             break;
-
-
         default:
+            if(isset($_REQUEST['key'])){
+                $key = $_REQUEST['key'];
+                $bookController->search($key);
+            }
             $bookController->index();
     }
     ?>

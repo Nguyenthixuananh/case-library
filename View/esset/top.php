@@ -238,7 +238,7 @@
             <div class="col-sm-2">
                 <div class="row row1">
                     <ul class="largenav pull-right">
-                        <li class="upper-links dropdown"><a class="links" href="#/" style="font-size: 30px">Menu</a>
+                        <li class="upper-links dropdown"><a class="links" href="" style="font-size: 30px">Menu</a>
                             <ul class="dropdown-menu">
                                 <li class="profile-li"><a class="profile-links" href="index.php?page=home-list">Book List</a></li>
                                 <li class="profile-li"><a class="profile-links" href="index.php?page=borrow-user-list">Borrowed List</a></li>
@@ -251,7 +251,7 @@
             <div class="flipkart-navbar-search smallsearch col-sm-8 col-xs-11">
                 <div class="row">
                     <form action="" method="get">
-                        <input class="flipkart-navbar-input col-xs-11" type="text" placeholder="Search for book" name="search">
+                        <input class="flipkart-navbar-input col-xs-11" style="background-color: #458CFF" type="text" placeholder="Search for book" name="search">
 <!--                        <input type="text" name="search" placeholder="Nhập từ khóa">-->
 <!--                        <input type="submit" value="Tìm">-->
                         <button type="submit" class="flipkart-navbar-button col-xs-1" >

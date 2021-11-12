@@ -1,14 +1,18 @@
 <div class="container-fluid">
-
+    <div>
+        <a class="btn btn-dark" href="index.php?page=book-list">Back</a>
+    </div>
+    <br>
     <table class="table align-middle">
         <thead class="table-info">
-        <tr>
+        <tr style="text-align: center">
             <th>STT</th>
 <!--            <th>User</th>-->
             <th>Book name</th>
             <th>Start Date</th>
             <th>Finish Date</th>
             <th>Status</th>
+            <th colspan="2">Action</th>
         </tr>
         </thead>
         <tbody>

@@ -1,10 +1,10 @@
 <div class="container-fluid">
-
-
-    <a type="button" class="btn btn-primary mt-3 mb-3 ps-5 pe-5 p-3" href="index.php?page=category-create">ADD NEW CATEGORY</a>
-    <a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>
-
-    <a type="button" class="btn btn-toutline-warning mt-3 mb-3 ps-5 pe-5 p-10" href="index.php?page=book-list">Book List</a>
+    <div>
+        <a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>
+        <a type="button" class="btn btn-dark" href="index.php?page=category-create">ADD NEW CATEGORY</a>
+        <a type="button" class="btn btn-dark" href="index.php?page=book-list">Book List</a>
+    </div>
+    <br>
     <table class="table align-middle">
         <thead class="table-info">
         <tr>

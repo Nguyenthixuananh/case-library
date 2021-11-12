@@ -1,4 +1,4 @@
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     <table border="1px">
         <tr>
             <th colspan="2">Information</th>
@@ -25,7 +25,7 @@
         </tr>
         <tr>
             <td>Your image</td>
-            <td><input type="text" name="image" value="<?php echo $user["image"]; ?>"></td>
+            <td><input type="file" name="file"></td>
         </tr>
         <tr>
             <td>Role</td>

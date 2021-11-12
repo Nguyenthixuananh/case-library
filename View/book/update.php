@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
     <table class="style-table">
         <thead>
         <tr>
@@ -38,6 +38,7 @@
 <!--            <th>Category</th>-->
             <th>Description</th>
             <th>Quantity</th>
+            <th>Image</th>
         </tr>
         </thead>
         <tbody style="background-color: cornsilk">
@@ -46,6 +47,7 @@
             <td><?php echo $book["name"] ?></td>
             <td><input style="width: 100%" id="title" type="text" name="description" value="<?php echo $book["description"] ?>"></td>
             <td><input style="width: 100%" id="title" type="text" name="quantity" value="<?php echo $book["quantity"] ?>"></td>
+            <td><input type="file" name="file"></td>
         </tr>
         <tr>
             <td>

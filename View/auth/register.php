@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,7 +17,7 @@
 <div class="container" style="width: 50%; ">
     <div class="row">
         <div class="col-md-12">
-            <form action="" method="post" role="form">
+            <form action="" method="post" role="form" enctype="multipart/form-data">
                 <legend style="font-family: Arial, Helvetica, sans-serif; margin-top: 200px; text-align: center; font-size: 60px; color: black">
                     <strong>Register</strong></legend>
                 <p>Please fill in this form to create an account.</p>
@@ -52,6 +55,9 @@
                     <label style="font-size: 20px" for="">Repeat Password:</label>
                     <input type="password" class="form-control" name="rPassword">
                 </div>
+                <div class="form-group">
+                    <label style="font-size: 20px" for="">Image:</label>
+                    <input type="file" name="file">
 
                 <button type="submit" class="btn btn-primary" style="margin-top: 50px; margin-left: 410px">Register
                 </button>

@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
 <table>
     <thead>
     <tr>
@@ -18,6 +18,7 @@
         <th>Author</th>
         <th>Publishing Company</th>
         <th>Quantity</th>
+        <th>Image</th>
     </tr>
     </thead>
     <tbody>
@@ -31,6 +32,8 @@
     <td><input type="text"name="author"></td>
     <td><input type="text"name="publishingCompany"></td>
     <td><input type="text"name="quantity"></td>
+    <td><input type="file" name="file"></td>
+
     <td>
         <a href="index.php?page=book-list"><button>Back</button></a>
     </td>
@@ -38,7 +41,7 @@
         <button type="reset">Reset</button>
     </td>
     <td>
-        <button type="submit">Add note</button>
+        <button type="submit">Add book</button>
     </td>
     </tbody>
 </table>

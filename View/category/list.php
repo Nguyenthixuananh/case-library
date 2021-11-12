@@ -1,11 +1,8 @@
 <div class="container-fluid">
-<!--    <div class="navbar">-->
-<!--        <a type="button" class="btn btn-dark" href="index.php?page=logout">Logout</a>-->
 
-<!--        <a type="button" class="btn btn-toutline-warning mt-3 mb-3 ps-5 pe-5 p-10" href="index.php?page=note-list">Note</a>-->
-<!--    </div>-->
 
     <a type="button" class="btn btn-primary mt-3 mb-3 ps-5 pe-5 p-3" href="index.php?page=category-create">ADD NEW CATEGORY</a>
+    <a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>
 
     <a type="button" class="btn btn-toutline-warning mt-3 mb-3 ps-5 pe-5 p-10" href="index.php?page=book-list">Book List</a>
     <table class="table align-middle">

@@ -19,6 +19,12 @@ class BorrowController
         include_once "View/borrow/list.php";
     }
 
+    public function indexBrrowUser()
+    {
+        $borrowes = $this->borrowModel->getAll();
+        include_once "View/borrow/userlist.php";
+    }
+
     public function indexUser()
     {
         $borrowes = $this->borrowModel->getAll();
@@ -62,14 +68,12 @@ class BorrowController
 
         header("location:index.php?page=home-list");
     }
+    public function search($key)
+    {
+        if($_SERVER['REQUEST_METHOD']=="GET") {
+            $search = $this->bookModel->search($key);
+            include "View/home/search.php";
+        }
+    }
 }
 
-//    public function create($data)
-//    {
-//        $data2 = [
-//            "name" => $data['name']
-//        ];
-//        $this->categoryModel->create($data2);
-//        header("location:index.php?page=category-list");
-//    }
-//

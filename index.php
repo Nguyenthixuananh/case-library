@@ -30,13 +30,6 @@ $username = $_SESSION["username"] ?? null;
 <?php if ($_SESSION["username"]): ?>
 <div class="container">
     <h4 style="margin-top: 100px">Name: <?php echo $username ?></h4>
-
-    <!--    <a type="button" class="btn btn-dark" href="index.php?page=logout">Logout</a>-->
-    <!--    <div class="navbar">-->
-    <!--        <a type="button" class="btn btn-info mt-3 mb-3 ps-5 pe-5 p-3" href="index.php?page=note-list">Note</a>-->
-    <!--        <a type="button" class="btn btn-info mt-3 mb-3 ps-5 pe-5 p-3" href="index.php?page=type-list">Type</a>-->
-    <!---->
-    <!--    </div>-->
     <?php endif; ?>
     <?php
     switch ($page) {
@@ -78,6 +71,13 @@ $username = $_SESSION["username"] ?? null;
             } else {
                 $bookController->editBook($id, $_REQUEST);
             }
+
+            break;
+
+        case "search":
+            $key = $_REQUEST['key'];
+            $bookController->search($key);
+
 
             break;
         case "category-create":
@@ -143,6 +143,10 @@ $username = $_SESSION["username"] ?? null;
                 $authController->editUser($id, $_REQUEST);
             }
             break;
+        case "home-search":
+            $key = $_REQUEST["key"];
+            $borrowController->search($key);
+            break;
         case "home-list":
             $bookController->homeIndex();
             break;
@@ -156,6 +160,9 @@ $username = $_SESSION["username"] ?? null;
             break;
         case "borrow-list":
             $borrowController->indexAdmin();
+            break;
+        case "borrow-user-list":
+            $borrowController->indexBrrowUser();
             break;
 
         case "home-profile":

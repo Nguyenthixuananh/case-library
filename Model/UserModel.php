@@ -49,6 +49,24 @@ class UserModel
 
     public function create($data)
     {
+//        $err = [];
+//        if (isset($_REQUEST['name'])){
+//            $name = $_REQUEST['name'];
+//            $phone = $_REQUEST['phone'];
+//            $address = $_REQUEST['address'];
+//            $email = $_REQUEST['email'];
+//            $role = $_REQUEST['role'];
+//
+//            if (empty($name)){
+//                $err['name'] = 'Bạn chưa nhập tên!';
+//            }if (empty($phone)){
+//                $err['phone'] = 'Bạn chưa nhập số điện thoại!';
+//            }if (empty($address)){
+//                $err['address'] = 'Bạn chưa nhập địa chỉ!';
+//            }if (empty($email)){
+//                $err['email'] = 'Bạn chưa nhập email!';
+//            }
+//        }
         $sql = "INSERT INTO $this->table(`name`,`phone`,`address`,`email`,`password`,`image`,`role`) VALUE(?,?,?,?,?,?,?)";
         $stmt = $this->dbConnect->prepare($sql);
         $stmt->bindParam(1, $data["name"]);

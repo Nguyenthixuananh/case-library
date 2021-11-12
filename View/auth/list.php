@@ -1,5 +1,5 @@
 <div class="container-fluid">
-
+    <a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>
     <table class="table align-middle">
         <thead class="table-info">
         <tr>
@@ -23,7 +23,7 @@
                     <td><?php echo $user["address"] ?></td>
                     <td><?php echo $user["email"] ?></td>
                     <td><?php echo $user["password"] ?></td>
-                    <td><?php echo $user["image"] ?></td>
+                    <td><img width="150px" height="150px" src="<?php echo $user["image"] ?>"></td>
                     <td><?php echo $user["role"] ?></td>
                     <td><a class="btn btn-danger" onclick="return confirm('Are you sure??')"
                            href="index.php?page=user-delete&id=<?php echo $user["id"] ?>">Delete</a></td>

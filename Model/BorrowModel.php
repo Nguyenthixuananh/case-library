@@ -74,4 +74,12 @@ from `borrowers`
         $stmt->bindParam(3, $data["datFinish"]);
         $stmt->execute();
     }
+
+    public function search($key)
+    {
+        $sql = "SELECT * FROM `books` WHERE `name` LIKE N'%$key%'";
+        $stmt = $this->dbConnect->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 }

@@ -14,9 +14,7 @@
         </thead>
         <tbody>
         <tr>
-            <td style="width: 150px" rowspan="5"><?php if (isset($user)) {
-                    echo $user["image"];
-                } ?></td>
+            <td style="width: 150px" rowspan="5"><img width="150px" height="150px"  src="<?php echo $book["image"] ?>"></td>
             <td>Name</td>
             <td><?php if (isset($book)) {
                     echo $book["name"];
@@ -59,7 +57,7 @@
         </thead>
         <tbody>
         <tr>
-            <td colspan="2">Code - Book: <input type="text" name="book_id" value="<?php if (isset($book)) {
+            <td colspan="2">Book ID: <input type="text" name="book_id" value="<?php if (isset($book)) {
                     echo $book["id"];
                 } ?>"></td>
         </tr>

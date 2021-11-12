@@ -11,7 +11,6 @@
                         <p>Portion <select name="role" id="role" required>
                                 <option value="-----">-----</option>
                                 <option value="Admin">Admin</option>
-                                <option value="Librarian">Librarian</option>
                                 <option value="User">User</option>
                             </select></p>
                     </td>

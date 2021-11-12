@@ -25,6 +25,8 @@ class AuthController
         $email = $request["email"];
         $password = $request["password"];
         $role = $request["role"];
+//        var_dump($request);
+//        die();
         if ($this->userModel->checkLogin($email, $password, $role)) {
             $user = $this->userModel->getByEmail($email);
             $_SESSION["username"] = $user["name"];
@@ -39,6 +41,7 @@ class AuthController
             echo "Tài khoản không đúng";
         }
     }
+
 
     public function logout()
     {
@@ -62,12 +65,24 @@ class AuthController
 
     public function create($data)
     {
+        $filepath = "";
+
+        if (isset($_FILES["file"])) {
+            $filepath = "uploads/" . $_FILES["file"]["name"];
+
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
+                echo "<img src=" . $filepath . " height=200 width=300 />";
+            } else {
+                echo "Error !!";
+            }
+        }
         $data2 = [
             "name" => $data['name'],
             "phone" => $data['phone'],
             "address" => $data['address'],
             "email" => $data['email'],
             "password" => $data['password'],
+            "image" =>$filepath,
             "role" => $data['role']
 
         ];
@@ -104,6 +119,17 @@ class AuthController
 
     public function editUser($id,$request)
     {
+        $filepath = "";
+
+        if (isset($_FILES["file"])) {
+            $filepath = "uploads/" . $_FILES["file"]["name"];
+
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
+                echo "<img src=" . $filepath . " height=200 width=300 />";
+            } else {
+                echo "Error !!";
+            }
+        }
         $user = $this->userModel->getById($id);
         $data = [
             "name" => $request['name'],
@@ -111,7 +137,7 @@ class AuthController
             "address" => $request['address'],
             "email" => $request['email'],
             "password" => $request['password'],
-            "image" => $request['image'],
+            "image" => $filepath,
             "role" => $request['role'],
             "id" => $id
         ];

@@ -2,6 +2,15 @@
 
 <a type="button" class="btn btn-outline-warning mt-3 mb-3 ps-5 pe-5 p-10" href="index.php?page=category-list">Category</a>
 <a type="button" class="btn btn-outline-warning mt-3 mb-3 ps-5 pe-5 p-10" href="index.php?page=user-list">User</a>
+<a type="button" class="btn btn-dark" href="index.php?page=logout">Logout</a>
+<a type="button" class="btn btn-dark" href="index.php?page=borrow-list">Borrowed</a>
+
+
+<form action=""method="get">
+    <input type="text" name="search" placeholder="Nhập từ khóa">
+    <input type="submit" value="Tìm">
+
+</form>
 
 <!--<form action=""></form>-->
 
@@ -15,6 +24,7 @@
         <th>Author</th>
         <th>Publishing Company</th>
         <th>Quantity</th>
+        <th>Image</th>
     </tr>
     </thead>
     <tbody>
@@ -28,6 +38,7 @@
                 <td><?php echo $book["author"] ?></td>
                 <td><?php echo $book["publishingCompany"] ?></td>
                 <td><?php echo $book["quantity"] ?></td>
+                <td><img width="150px" height="150px"  src="<?php echo $book["image"] ?>"></td>
 <!--                <td><a class="btn btn-success" href="index.php?page=note-detail&id=--><?php //echo $note["id"] ?><!--">Detail</a></td>-->
                 <td><a onclick="return confirm('Are you sure??')"
                        href="index.php?page=book-delete&id=<?php echo $book["id"] ?>">Delete</a></td>

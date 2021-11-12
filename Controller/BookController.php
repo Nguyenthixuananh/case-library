@@ -48,17 +48,29 @@ class BookController
 
     public function create($data)
     {
+        $filepath = "";
+
+        if (isset($_FILES["file"])) {
+            $filepath = "uploads/" . $_FILES["file"]["name"];
+
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
+                echo "<img src=" . $filepath . " height=200 width=300 />";
+            } else {
+                echo "Error !!";
+            }
+        }
+
         $data2 = [
             "name" =>$data['name'],
             "category_id" => $data['category_id'],
             "description" => $data['description'],
             "author" => $data['author'],
             "publishingCompany" => $data['publishingCompany'],
-            "quantity" => $data['quantity']
+            "quantity" => $data['quantity'],
+            "image" => $filepath
         ];
         $this->bookModel->create($data2);
-//        var_dump($data2);
-//        die();
+
         header("location:index.php");
     }
 
@@ -66,7 +78,7 @@ class BookController
     {
         if ($this->bookModel->getById($id) !== null) {
             if($this->borrowModel->checkBookById($id)){
-                echo "<script>alert('Khong the xoa sach do dang co nguoi muon!');window.location.href='index.php?page=book-list';</script>";
+                echo "<script>alert('Không thể xóa sách này do đang có người mượn!!!');window.location.href='index.php?page=book-list';</script>";
             }else{
                 $this->bookModel->delete($id);
                 header("location:index.php");
@@ -75,11 +87,6 @@ class BookController
         }
     }
 
-//    public function showDetail($id)
-//    {
-//        $book = $this->bookModel->getById($id);
-//        include_once "View/book/detail.php";
-//    };
 
     public function showFormUpdate()
     {
@@ -90,15 +97,36 @@ class BookController
 
     public function editBook($id,$request)
     {
+        $filepath = "";
+
+        if (isset($_FILES["file"])) {
+            $filepath = "uploads/" . $_FILES["file"]["name"];
+
+            if (move_uploaded_file($_FILES["file"]["tmp_name"], $filepath)) {
+                echo "<img src=" . $filepath . " height=200 width=300 />";
+            } else {
+                echo "Error !!";
+            }
+        }
         $book = $this->bookModel->getById($id);
         $data = [
 //            "category_id" => $request["category_id"],
             "description" => $request["description"],
             "quantity" => $request["quantity"],
+            "image" => $filepath,
             "id" => $id
         ];
         $this->bookModel->edit($data);
         header("location:index.php");
+    }
+
+    public function search($key)
+    {
+        if($_SERVER['REQUEST_METHOD']=="GET") {
+            $search = $this->bookModel->search($key);
+            include "View/book/search.php";
+
+        }
     }
 
 }

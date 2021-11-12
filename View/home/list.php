@@ -7,13 +7,19 @@ $username = $_SESSION["username"] ?? null;
 <?php if ($_SESSION["username"]):?>
 <?php print_r($username) ?>
     <?php endif;?>
+<!--<a type="button" class="btn btn-dark" href="index.php?page=book-list">Back</a>-->
+<a type="button" class="btn btn-dark" href="index.php?page=logout">Logout</a>
+<a type="button" class="btn btn-dark" href="index.php?page=borrow-user-list">Borrowed</a>
 
-
+<form action=""method="get">
+    <input type="text" name="search" placeholder="Nhập từ khóa">
+    <input type="submit" value="Tìm">
+</form>
 <table border="1px">
     <thead>
     <tr>
         <th>No.</th>
-        <th>Image</th>
+<!--        <th>Image</th>-->
         <th>Book</th>
         <th>Category</th>
         <th>Author</th>
@@ -25,7 +31,7 @@ $username = $_SESSION["username"] ?? null;
         <?php foreach ($books as $key => $book): ?>
             <tr>
                 <td><?php echo $key + 1 ?></td>
-                <td><?php echo $book["image"] ?></td>
+<!--                <td><img width="150px" height="150px"  src="--><?php //echo $book["image"] ?><!--"></td>                <td>--><?php //echo $book["book_name"] ?><!--</td>-->
                 <td><?php echo $book["book_name"] ?></td>
                 <td><?php echo $book["category_name"] ?></td>
                 <td><?php echo $book["author"] ?></td>
